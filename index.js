@@ -13,15 +13,18 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
   var today = new Date();
-  var currentDay = today.getDay();
-  var day = "";
 
-  if (currentDay === 6 || currentDay === 0){
-    day = "Weekend";
 
-  }else{
-    day = "Weekday";
-  }
+  var options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+  };
+
+  var day = today.toLocalDatesString("en-US", options);
+
+  
+
   res.render("index", { kindOfDay: day })
 
 
