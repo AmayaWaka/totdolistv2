@@ -6,12 +6,22 @@
     <title></title>
   </head>
   <body>
-    <%if(kindOfDay === "Saturday" || kindOfDay === "Sunday"){%>
-      <h1 style="color: purple"><%= kindOfDay %> ToDo List</h1>
 
-    <%}else{%>
-      <h1 style="color: blue"><%= kindOfDay %> ToDo List</h1>
+      <h1 style="color: blue"><%= kindOfDay %></h1>
 
-    <%}%>
+      <ul>
+        <li>Buy Food</li>
+        <li>Cook Food</li>
+        <li>Eat</li>
+        <li><%= newActivity %></li>
+      </ul>
+
+    <form class="" action="/" method="post">
+      <input type="string" name="newItem" value="" placeholder="Enter Activity">
+      <button type="submit">Submit</button>
+
+    </form>
+
+
   </body>
 </html>
