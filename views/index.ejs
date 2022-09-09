@@ -9,17 +9,17 @@
 
       <h1 style="color: blue"><%= kindOfDay %></h1>
 
-      <ol>
+      <ul>
         <!-- <li>Buy Food</li>
         <li>Cook Food</li>
         <li>Eat</li> -->
 
-        <% for(var i = 0; i < newActivity.length; i++){ %>
+        <% for(let i = 0; i < newActivity.length; i++){ %>
           <li><%= newActivity[i] %></li>
 
         <% } %>
 
-      </ol>
+      </ul>
 
     <form class="" action="/" method="post">
       <input type="string" name="newItem" value="" placeholder="Enter Activity">
