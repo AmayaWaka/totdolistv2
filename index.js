@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-let activities = [];
-
+let items = [];
+let workItems = [];
+//List.ejs rendering
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
-app.get('/', function(req, res){
+app.get("/", function(req, res){
   let today = new Date();
   let options = {
     weekday: "long",
@@ -15,15 +16,18 @@ app.get('/', function(req, res){
     month: "long"
   };
   let day = today.toLocaleDateString("en-US", options);
-  res.render("index", { kindOfDay: day, newActivity: activities })
+  res.render("list", { kindOfDay: day, newListItems: items })
 });
 
 app.post("/", function(req, res){
-  activity = req.body.newItem;
-  console.log(activity);
-  activities.push(activity);
+
+  item = req.body.newItem;
+
+  items.push(item);
   res.redirect("/")
-})
+
+});
+
 app.listen(3000, function(req, res){
   console.log("Server Started on Port 3000")
 });

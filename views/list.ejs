@@ -12,17 +12,17 @@
   <body>
     <div class="box" id="heading">
 
-      <h1><%= listTitle %></h1>
+      <h1><%= kindOfDay %></h1>
     </div>
 
 
 <div class="box">
 
 
-        <% for(let i = 0; i < newActivity.length; i++){ %>
+        <% for(let i = 0; i < newListItems.length; i++){ %>
           <div class="item">
             <input type="checkbox">
-          <p><%= newActivity[i] %></p>
+          <p><%= newListItems[i] %></p>
           </div>
 
         <% } %>
@@ -30,7 +30,7 @@
 
       <form class="item" action="/" method="post">
         <input type="string" name="newItem" value="" placeholder="Enter Activity" autocomplete="off"required>
-        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        <button type="submit" name="list" value="">+</button>
 
       </form>
 </div>
