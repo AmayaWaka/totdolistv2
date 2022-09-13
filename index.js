@@ -3,15 +3,15 @@ const app = express();
 const bodyParser = require('body-parser');
 const date = require(__dirname + "/date.js");
 
-let items = [];
-let workItems = [];
+const items = [];
+const workItems = [];
 //List.ejs rendering
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
 app.get("/", function(req, res){
-  let day = date.getDate();
+  const day = date.getDate();
 
   res.render("list", { listTitle: day, newListItems: items })
 });
@@ -26,7 +26,6 @@ app.post("/", function(req, res){
     items.push(item);
     res.redirect("/");
   }
-
 
 });
 
